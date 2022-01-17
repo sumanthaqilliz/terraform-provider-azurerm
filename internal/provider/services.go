@@ -18,6 +18,7 @@ import (
 	"github.com/hashicorp/terraform-provider-azurerm/internal/services/blueprints"
 	"github.com/hashicorp/terraform-provider-azurerm/internal/services/bot"
 	"github.com/hashicorp/terraform-provider-azurerm/internal/services/cdn"
+	"github.com/hashicorp/terraform-provider-azurerm/internal/services/chaos"
 	"github.com/hashicorp/terraform-provider-azurerm/internal/services/cognitive"
 	"github.com/hashicorp/terraform-provider-azurerm/internal/services/communication"
 	"github.com/hashicorp/terraform-provider-azurerm/internal/services/compute"
@@ -149,6 +150,7 @@ func SupportedUntypedServices() []sdk.UntypedServiceRegistration {
 		blueprints.Registration{},
 		bot.Registration{},
 		cdn.Registration{},
+		chaos.Registration{},
 		cognitive.Registration{},
 		communication.Registration{},
 		compute.Registration{},
