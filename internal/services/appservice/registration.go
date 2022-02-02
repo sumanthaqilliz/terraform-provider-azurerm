@@ -39,17 +39,22 @@ func (r Registration) Resources() []sdk.Resource {
 	if features.ThreePointOhAppServiceResources() {
 		return []sdk.Resource{
 			AppServiceSourceControlTokenResource{},
+			LinuxFunctionAppHybridConnectionResource{},
 			LinuxFunctionAppResource{},
 			LinuxFunctionAppSlotResource{},
+			LinuxWebAppHybridConnectionResource{},
 			LinuxWebAppResource{},
 			LinuxWebAppSlotResource{},
 			ServicePlanResource{},
 			SourceControlResource{},
 			SourceControlSlotResource{},
 			WindowsWebAppResource{},
+			WindowsFunctionAppHybridConnectionResource{},
 			WindowsFunctionAppResource{},
-			WindowsWebAppSlotResource{},
 			WindowsFunctionAppSlotResource{},
+			WindowsWebAppHybridConnectionResource{},
+			WindowsWebAppResource{},
+			WindowsWebAppSlotResource{},
 		}
 	}
 	return []sdk.Resource{}
