@@ -20,10 +20,6 @@ import (
 	"github.com/hashicorp/terraform-provider-azurerm/utils"
 )
 
-/*
- TODO - Should this resource be split into the O/S variants for clarity of purpose?
-*/
-
 type ServicePlanResource struct{}
 
 var _ sdk.ResourceWithUpdate = ServicePlanResource{}
@@ -49,8 +45,6 @@ type ServicePlanModel struct {
 	WorkerCount               int               `tfschema:"worker_count"`
 	MaximumElasticWorkerCount int               `tfschema:"maximum_elastic_worker_count"`
 	Tags                      map[string]string `tfschema:"tags"`
-	// TODO properties
-	// KubernetesID string `tfschema:"kubernetes_id"` // AKS Cluster resource ID?
 }
 
 func (r ServicePlanResource) Arguments() map[string]*pluginsdk.Schema {
@@ -88,7 +82,7 @@ func (r ServicePlanResource) Arguments() map[string]*pluginsdk.Schema {
 		"app_service_environment_id": {
 			Type:         pluginsdk.TypeString,
 			Optional:     true,
-			ValidateFunc: webValidate.AppServiceEnvironmentID, // TODO - Bring over to this service
+			ValidateFunc: webValidate.AppServiceEnvironmentID,
 		},
 
 		"per_site_scaling_enabled": {

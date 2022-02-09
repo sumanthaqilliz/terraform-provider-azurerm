@@ -153,7 +153,7 @@ func ServicePlanInfoForApp(ctx context.Context, metadata sdk.ResourceMetaData) (
 	}
 
 	osType = utils.String("windows")
-	if strings.Contains(*sp.Kind, "linux") || strings.Contains(*sp.Kind, "Linux") {
+	if strings.Contains(strings.ToLower(*sp.Kind), "linux") {
 		osType = utils.String("linux")
 	}
 
