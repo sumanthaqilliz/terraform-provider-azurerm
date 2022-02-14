@@ -67,7 +67,7 @@ func resourceFirewall() *pluginsdk.Resource {
 				Type:     pluginsdk.TypeString,
 				Required: features.ThreePointOhBeta(),
 				Optional: !features.ThreePointOhBeta(),
-				Computed: true,
+				Computed: !features.ThreePointOhBeta(),
 				ForceNew: true,
 				ValidateFunc: validation.StringInSlice([]string{
 					string(network.AzureFirewallSkuNameAZFWHub),
@@ -79,7 +79,7 @@ func resourceFirewall() *pluginsdk.Resource {
 				Type:     pluginsdk.TypeString,
 				Required: features.ThreePointOhBeta(),
 				Optional: !features.ThreePointOhBeta(),
-				Computed: true,
+				Computed: !features.ThreePointOhBeta(),
 				ForceNew: true,
 				ValidateFunc: validation.StringInSlice([]string{
 					string(network.AzureFirewallSkuTierPremium),
